@@ -13,6 +13,8 @@ Spork.prefork do
   require 'rspec'
   require 'vcr'
 
+  require File.expand_path("../config/test", File.dirname(__FILE__))
+
   RSpec.configure do |config|
     config.extend VCR::RSpec::Macros
   end

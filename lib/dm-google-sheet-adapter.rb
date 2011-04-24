@@ -1,6 +1,7 @@
 require 'dm-migrations'
 require 'dm-migrations/auto_migration'
 require 'faraday'
+require 'nokogiri'
 
 module DataMapper
   module Adapters
@@ -147,7 +148,7 @@ module DataMapper
         def_delegators :@set, :<<, :detect, :each, :map, :collect, :inject
 
         def initialize(*args)
-          options      = args.extract_options!
+          options      = args.last.is_a?(Hash) ? args.pop : {}
           @set         = Set.new(*args)
         end
 
@@ -360,9 +361,13 @@ module DataMapper
             b.use AddLinks
             b.use ParseAtom
 
-            b.adapter :typhoeus
+            b.adapter connection_adapter
           end
         end
+      end
+
+      def connection_adapter
+        options.fetch(:connection_adapter){:net_http}
       end
 
       def follow(link_or_url)

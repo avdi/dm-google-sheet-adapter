@@ -34,6 +34,7 @@ GEM
     libnotify (0.3.0)
       ffi (>= 0.6.2)
     multipart-post (1.1.0)
+    nokogiri (1.4.4)
     rack (1.2.2)
     rake (0.8.7)
     rb-inotify (0.8.4)
@@ -68,6 +69,7 @@ DEPENDENCIES
   guard-spork (~> 0.1.10)
   jeweler (~> 1.5.2)
   libnotify
+  nokogiri (~> 1.4.0)
   rb-inotify
   rcov
   rspec (~> 2.3.0)

@@ -8,6 +8,7 @@ DM_VERSION = "~> 1.0"
 gem 'dm-core',       DM_VERSION
 gem 'dm-migrations', DM_VERSION
 gem 'faraday',       "~> 0.6.1"
+gem 'nokogiri',      "~> 1.4.0"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

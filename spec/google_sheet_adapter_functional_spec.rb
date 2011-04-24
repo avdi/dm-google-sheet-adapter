@@ -16,8 +16,8 @@ describe DataMapper::Adapters::GoogleSheetAdapter do
   before :each do
     DataMapper.setup(:default,
       :adapter    => "google_sheet",
-      :secret_key => GoogleSession.test_user_token,
-      :domain     => GoogleSession.test_sheet_url)
+      :secret_key => $TEST_AUTHSUB_TOKEN,
+      :domain     => $TEST_SHEET_URL)
     DataMapper.repository(:default) do
       DataMapper.finalize
       DataMapper.repository.auto_migrate!
