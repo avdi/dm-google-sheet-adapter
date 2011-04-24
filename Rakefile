@@ -35,6 +35,7 @@ end
 RSpec::Core::RakeTask.new(:rcov) do |spec|
   spec.pattern = 'spec/**/*_spec.rb'
   spec.rcov = true
+  spec.rspec_opts = "--drb --color"
 end
 
 task :default => :spec
